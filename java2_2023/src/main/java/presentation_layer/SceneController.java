@@ -1,0 +1,248 @@
+package presentation_layer;
+
+import java.io.IOException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.ResourceBundle;
+import java.util.concurrent.atomic.AtomicInteger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+
+import domain_layer.Client;
+import domain_layer.Vehicle;
+import domain_layer.Reservation;
+import domain_layer.ClientHolder;
+
+public class SceneController implements Initializable {
+	
+	static Logger log = LogManager.getLogger(App.class);	
+    
+    public SceneController() {}
+    
+    public Thread thread;
+    protected Client client;
+    protected Stage stage;
+    protected Scene scene;
+    protected Parent root;
+    public volatile static boolean stop = false;
+    public static AtomicInteger threadCount = new AtomicInteger();
+    protected int loginAttempts = 0;
+    
+    @FXML
+    private Label greetings;
+    @FXML
+    private Label time;
+    @FXML
+    private Label date;
+    @FXML
+    protected TableView<Vehicle> vehicleTable;
+    @FXML
+    protected TableView<Reservation> reservationTable;
+    @FXML
+    protected ChoiceBox<String> pickVehicle;
+    @FXML
+    protected ChoiceBox<String> pickTime;
+    @FXML
+    protected DatePicker pickDate;
+    
+    public void logOut(ActionEvent event) throws IOException {
+        ClientHolder holder = ClientHolder.getInstance();
+        holder.setClient(new Client(0, null, null, null, null, 0));
+        FXMLLoader FXMLLoader = new FXMLLoader(App.class.getResource("/fxml/LoginScreen.fxml"));
+        root = FXMLLoader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public void showReservations(ActionEvent event) throws IOException {  
+        FXMLLoader FXMLLoader = new FXMLLoader(App.class.getResource("/fxml/ReservationsScreen.fxml"));
+        root = FXMLLoader.load();
+        SceneController controller = FXMLLoader.getController();
+        
+        ClientHolder holder = ClientHolder.getInstance();
+        client = holder.getClient();
+        client.setReservationList(client);
+
+        reservationTable = controller.getReservationTable();
+        
+        TableColumn<Reservation, String> dateTime = new TableColumn<>("Datum a čas rezervace");
+        dateTime.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
+        TableColumn<Reservation, String> vin = new TableColumn<>("VIN kód vozidla");
+        vin.setCellValueFactory(new PropertyValueFactory<>("vin"));
+        TableColumn<Reservation, String> issue = new TableColumn<>("Popsaný problém");
+        issue.setCellValueFactory(new PropertyValueFactory<>("issue"));
+
+        reservationTable.getColumns().addAll(dateTime, vin, issue);
+        
+        ObservableList<Reservation> data = FXCollections.observableArrayList(client.getReservationList());
+        reservationTable.setItems(data);
+        
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void createReservation(ActionEvent event) throws IOException {
+        FXMLLoader FXMLLoader = new FXMLLoader(App.class.getResource("/fxml/NewReservationScreen.fxml"));
+        root = FXMLLoader.load();
+        SceneController controller = FXMLLoader.getController();
+        
+        ChoiceBox<String> pickVehicle = controller.getVehiclePicker();
+        ChoiceBox<String> pickTime = controller.getTimePicker();
+        
+        ClientHolder holder = ClientHolder.getInstance();
+        client = holder.getClient();
+        client.setVehicleList(client);
+        
+        pickTime.getItems().addAll("8:00", "9:00", "10:00", "11:00", "13:00", "14:00", "15:00");
+        
+        for (Vehicle vehicle : client.getVehicleList()) {
+            String clientVehicle = vehicle.getMake() + " " + vehicle.getModel() + ", " + vehicle.getYear()
+            + ", VIN-" + vehicle.getVin();
+            pickVehicle.getItems().add(clientVehicle);
+        }
+        
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @SuppressWarnings("unchecked")
+    public void showVehicles(ActionEvent event) throws IOException {
+        FXMLLoader FXMLLoader = new FXMLLoader(App.class.getResource("/fxml/VehiclesScreen.fxml"));
+        root = FXMLLoader.load();
+        SceneController controller = FXMLLoader.getController();
+        
+        ClientHolder holder = ClientHolder.getInstance();
+        client = holder.getClient();
+        client.setVehicleList(client);
+
+        vehicleTable = controller.getVehicleTable();
+        
+        TableColumn<Vehicle, String> make = new TableColumn<>("Značka");
+        make.setCellValueFactory(new PropertyValueFactory<>("make"));
+        TableColumn<Vehicle, String> model = new TableColumn<>("Model");
+        model.setCellValueFactory(new PropertyValueFactory<>("model"));
+        TableColumn<Vehicle, String> year = new TableColumn<>("Ročník");
+        year.setCellValueFactory(new PropertyValueFactory<>("year"));
+        TableColumn<Vehicle, String> vin = new TableColumn<>("VIN");
+        vin.setCellValueFactory(new PropertyValueFactory<>("vin"));
+        TableColumn<Vehicle, String> plate = new TableColumn<>("SPZ");
+        plate.setCellValueFactory(new PropertyValueFactory<>("plate"));
+        
+        vehicleTable.getColumns().addAll(make, model, year, vin, plate);
+        
+        ObservableList<Vehicle> data = FXCollections.observableArrayList(client.getVehicleList());
+        vehicleTable.setItems(data);
+        
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    public void showBio(ActionEvent event) throws IOException {
+        FXMLLoader FXMLLoader = new FXMLLoader(App.class.getResource("/fxml/AboutUs.fxml"));
+        root = FXMLLoader.load();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
+    @SuppressWarnings({"all"})
+    private void timenow(Thread thread) {
+        thread.start();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) { 
+        if (this.thread != null) {
+        	stopThread();
+        	this.thread.interrupt();
+        	threadCount.decrementAndGet();
+        }
+        
+        this.thread = new Thread(() ->{
+        	threadCount.incrementAndGet();
+            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+            SimpleDateFormat dmy = new SimpleDateFormat("d.M.y");
+            ClientHolder holder = ClientHolder.getInstance();
+            client = holder.getClient();
+            
+            while(!stop) {
+                try {
+                    Thread.sleep(100);
+                } catch(Exception e) {
+                	log.error("Thread sleep failed", e);
+                }
+                time = getTime();
+                String timenow = sdf.format(new Date());
+                String datenow = dmy.format(new Date());
+                Platform.runLater(()->{
+	                try {
+	                	String hello = "Vítejte, " + client.getFirstName() + "!";
+	                    time.setText(timenow);
+	                    date.setText(datenow);
+	                    greetings.setText(hello); 
+	                } catch(Exception e) {
+	                	//log.error("Time set error", e);
+	                }
+                    
+                });
+            }
+        });
+        
+        timenow(this.thread);
+    }
+    
+    public static void stopThread() {
+        stop = true;
+    }
+    
+    @SuppressWarnings({"all"})
+    public Label getTime() {
+        return this.time;
+    }
+    
+    public TableView<Vehicle> getVehicleTable() {
+        return this.vehicleTable;
+    }
+    
+    public TableView<Reservation> getReservationTable() {
+        return this.reservationTable;
+    }
+    
+    public ChoiceBox<String> getVehiclePicker() {
+        return this.pickVehicle;
+    }
+    
+    public ChoiceBox<String> getTimePicker() {
+        return this.pickTime;
+    }
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="info">
+	<Properties>
+		<Property name="basePath">/Users/Splat/Desktop/java1_2022_opa0023</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+		</Console>
+    	<RollingFile name="File" fileName="${basePath}/log4j.log" filePattern="${basePath}/log4j-%d{yyyy-MM-dd}.log">
+      		<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true" />
+				<SizeBasedTriggeringPolicy size="10MB" />
+			</Policies>
+				<DefaultRolloverStrategy max="10">
+					<Delete basePath="${basePathr}" maxDepth="10">
+						<IfLastModified age="30d" />
+					</Delete>
+				</DefaultRolloverStrategy>
+		</RollingFile>
+	</Appenders>
+	<Loggers>
+		<Root level="info" additivity="false">
+			<AppenderRef ref="Console"></AppenderRef>
+			<AppenderRef ref="File"></AppenderRef>
+		</Root>
+	</Loggers>
+</Configuration>
