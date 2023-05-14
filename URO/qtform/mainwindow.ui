@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="Tab">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>0</y>
+      <width>781</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Tab1">
+     <property name="accessibleName">
+      <string/>
+     </property>
+     <attribute name="title">
+      <string>Podání zásilky</string>
+     </attribute>
+     <widget class="QLineEdit" name="lineEdit">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Jméno</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje odesílatele</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Příjmení</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ulice</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>100</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Město</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>130</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PSČ</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>160</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Telefon</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>E-mail</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_7">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>220</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_8">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hmotnost</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje o zásilce</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_9">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cena</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Expres</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="checkBox">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>100</y>
+        <width>85</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Jméno</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_10">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>100</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>130</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Město</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>190</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Telefon</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_11">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>220</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Příjmení</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_12">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>130</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje adresáta</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>220</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>E-mail</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_13">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>160</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PSČ</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_14">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>190</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ulice</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_15">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_16">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>160</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>215</y>
+        <width>190</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Potvrdit</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="countries_1">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>250</y>
+        <width>760</width>
+        <height>250</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="pixmap">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>10</y>
+        <width>171</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>cp.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Tab2">
+     <attribute name="title">
+      <string>Příjem zásilky k proclení</string>
+     </attribute>
+     <widget class="QLabel" name="label_22">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Jméno</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line3">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>100</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>130</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Město</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line9">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_24">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ulice</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line16">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line15">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line14">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>220</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Jméno</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Telefon</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line11">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>130</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_28">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje adresáta</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line7">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>220</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_29">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Příjmení</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_30">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>40</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hmotnost</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line13">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>190</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line4">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>130</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line10">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>100</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_31">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>220</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>E-mail</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_32">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje odesílatele</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_33">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>130</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Město</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_34">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Expres</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_35">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>E-mail</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_36">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Příjmení</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="line17">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>100</y>
+        <width>85</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line2">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_37">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>160</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PSČ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_38">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Údaje o zásilce</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_39">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>160</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PSČ</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line6">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_40">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>70</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Cena</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_41">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>190</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Telefon</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line12">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>160</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_42">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ulice</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line8">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line1">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line5">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>160</y>
+        <width>113</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_43">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>130</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Země</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="line19">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>190</y>
+        <width>85</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_45">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>190</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>DPH</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="line18">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>160</y>
+        <width>85</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_46">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>160</y>
+        <width>58</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clo</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="cccombo">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>130</y>
+        <width>103</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="confirmBtn">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>215</y>
+        <width>190</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Potvrdit</string>
+      </property>
+     </widget>
+     <widget class="QTableView" name="countries_2">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>250</y>
+        <width>760</width>
+        <height>250</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="pixmap_2">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>10</y>
+        <width>171</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>cp.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="Tab3">
+     <attribute name="title">
+      <string>Evidence zásilek</string>
+     </attribute>
+     <widget class="QTableView" name="packages">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>9</y>
+        <width>771</width>
+        <height>491</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
