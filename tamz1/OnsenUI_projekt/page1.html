@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body onload="showTodo()">
+    <ons-page id="page1">
+        <ons-toolbar>
+            <div class="center">Nákupní seznam</div>
+        </ons-toolbar>
+        <div class="container">
+            <ons-list id="todoList">
+
+            </ons-list>
+        </div>
+
+        <ons-fab position="bottom left" onclick="goBackToMenu()">
+            <ion-icon icon="arrow-back-outline"></ion-icon>
+        </ons-fab>
+        <ons-fab position="bottom right" onclick="addDialog()">
+            <ons-icon icon="md-plus"></ons-icon>
+        </ons-fab>
+    </ons-page>
+
+    <ons-dialog id="dialog-1">
+        <div style="text-align: center; padding: 10px;">
+            <div class="container">
+                <ons-input id="taskName" modifier="underbar" maxlength="50" placeholder="Položka" float onclick="labelOnclick()"></ons-input>
+
+            </div>
+            <div class="button-center">
+                <ons-button modifier="material" id="push-button4" onclick="addTask()">Přidat</ons-button>
+                <ons-button modifier="material" id="push-button5" onclick="closeDialog()">Zavřít</ons-button>
+            </div>
+        </div>
+    </ons-dialog>
+
+</body>
+
+</html>

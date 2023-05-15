@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+  <script src="https://unpkg.com/jquery/dist/jquery.min.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body onload="onLoad()">
+  <ons-page>
+    <ons-toolbar>
+      <div page="page0.html" class="center">Nákupní seznamy</div>
+    </ons-toolbar>
+
+    <ons-page id="page0">
+
+      <div class="container">
+        <ons-list id="todoLists">
+
+          
+        </ons-list>
+      </div>
+
+      <ons-fab position="bottom right" onclick="addListDialog()">
+        <ons-icon icon="md-plus"></ons-icon>
+      </ons-fab>
+
+      <ons-dialog id="dialog-0">
+        <div style="text-align: center; padding: 10px;">
+          <div class="container">
+            <ons-input id="listName" modifier="underbar" maxlength="50" placeholder="Jméno seznamu" float onclick="labelOnclick()"></ons-input>
+          </div>
+          <div class="button-center">
+            <ons-button modifier="material" id="push-button-confirm" onclick="addListOfTasks()">Přidat</ons-button>
+            <ons-button modifier="material" id="push-button-cancel" onclick="closeDialogMain()">Zavřít</ons-button>
+          </div>
+        </div>
+      </ons-dialog>
+
+    </ons-page>
+  </ons-page>
+</body>
+
+</html>

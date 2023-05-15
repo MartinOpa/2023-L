@@ -1,0 +1,23 @@
+ons-list {
+  margin-top: 10px;
+}
+
+ons-list-item {
+  border-bottom: 1px solid #444;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.todo_text {
+  flex: 1;
+}
+
+.todo_checkbox {
+  margin-left: 10px;
+}
