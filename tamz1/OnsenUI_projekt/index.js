@@ -43,7 +43,7 @@ function addListOfTasks() {
         listName.attr("placeholder", "Jméno seznamu");
         listName.css("border-bottom", "solid rgba(255, 0, 0, .8) 2px");
     } else {
-        var lists = JSON.parse(localStorage.getItem("lists"));
+        var lists = JSON.parse(localStorage.getItem("lists")) || [];
         if (lists === undefined || lists === null || lists === []) {
             id = 0;
         } else {
