@@ -1,0 +1,26 @@
+<head>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    <div class="container-fluid p-1 bg-black text-white text-center">
+        <h1>
+            Caffeine and Machine
+        </h1>
+    </div>
+
+    {% if user.is_authenticated %}
+    <div class="container-fluid p-2 bg-dark text-white text-left">
+        <div class="d-flex justify-content-between">
+            Hi {{ user.username }}!     
+
+            <a class="nav-link link-light" href="{% url 'vehicles' %}">Petrol posts</a>
+            <a class="nav-link link-light" href="{% url 'cafe' %}">Coffee lovers</a>
+            <a class="nav-link link-light" href="{% url 'events' %}">Looking to hang out?</a>
+            <a class="nav-link link-light" href="{% url 'myEvents' %}">My events</a>
+
+            <p><a class="nav-link link-light" href="{% url 'logout' %}">Log Out</a></p>
+        </div>
+    </div>
+    {% endif %}
+</head>

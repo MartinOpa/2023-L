@@ -1,0 +1,35 @@
+<html>
+{% include "cam/header.html" %}
+    {% block content %}
+    <body class="d-flex flex-column h-100">
+    <div class="container-fluid h-100 bg-dark text-white text-center" style="padding-left: 5%; padding-right: 5%;">
+    {% if not user.is_authenticated %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% else %}
+
+    {{ post.published  | date:"d.m. Y H:m" }}<br>
+    <b>{{ post.user.username }}</b><br>
+    {{ post.year }} {{ post.brand }} {{ post.model }}<br>
+    <img src="{{post.image.url}}" width="250" height="250"><br>
+    {{ post.desc }}<br><br>
+
+    Add comment<br>
+    <form action="{% url 'postVehComment' post.id %}" method="POST">
+        {% csrf_token %}
+        {{ commentForm.as_p }}
+        <input type="submit" value="Post">
+    </form>
+
+    {% for comment in comments %}
+        {{ comment.published }}<br>
+        <b>{{ comment.user.username }}</b> : 
+        {{ comment.text }}<br>
+
+    {% endfor %}
+    {% endif %}
+    </div>
+    </body>
+    {% endblock %}
+{% include "cam/footer.html" %}
+</html>

@@ -1,0 +1,33 @@
+<html>
+    {% include "cam/header.html" %}
+
+    {% block content %}
+    <body class="d-flex flex-column h-100">
+        <div class="container-fluid h-100 bg-dark text-white text-center">
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+            
+        {% for field in form %}
+        <p>
+            {% if field.errors %}
+            <ul class="errorlist">
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {{ field.label_tag }} {{ field }}
+        </p>
+        {% endfor %}
+        <input type="submit" value="Register" />
+
+        <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+    </form>
+    </div>
+    </body>
+    {% endblock content%}
+
+    {% include "cam/footer.html" %}
+    
+</html>

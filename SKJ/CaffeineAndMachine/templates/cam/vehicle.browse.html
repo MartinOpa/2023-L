@@ -1,0 +1,26 @@
+<html>
+{% include "cam/header.html" %}
+    {% block content %}
+    <body class="d-flex flex-column h-100">
+    <div class="container-fluid h-100 bg-dark text-white text-center">
+    {% if not user.is_authenticated %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% else %}
+
+    <a class="link-light" href="{% url 'addVehicle' %}">Share your petrol thoughts here!</a><br>
+
+    {% for post in posts %}
+        <br>
+        {{ post.published | date:"d.m. Y H:m" }} <br>
+        <b><a class="link-light" href="{% url 'vehicle' post.id %}">{{ post.user.username }}</a></b><br>
+        {{ post.year }} {{ post.brand }} {{ post.model }}<br>
+        {{ post.desc }}<br>
+    {% endfor %}
+
+    {% endif %}
+    </div>
+    </body>
+    {% endblock %}
+{% include "cam/footer.html" %}
+</html>

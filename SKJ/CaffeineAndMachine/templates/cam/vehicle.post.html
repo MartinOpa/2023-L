@@ -1,0 +1,20 @@
+<html>
+    {% include "cam/header.html" %}
+    {% block content %}
+    {% if not user.is_authenticated %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+    {% else %}
+
+    <body>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Add vehicle">
+        </form>
+    </body>
+
+    {% endif %}
+    {% endblock %}
+    {% include "cam/footer.html" %}
+</html>
